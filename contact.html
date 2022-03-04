@@ -69,7 +69,7 @@
                                 <input type="text" class="form-control" id="subject" placeholder="Subject">
                             </div>
                             <div class="form-group">
-                                <textarea class="form-control" rows="3" placeholder="Enter your message"></textarea>
+                                <textarea class="form-control" rows="3" id="subject" placeholder="Enter your message"></textarea>
                             </div>
                             <button type="submit" class="btn btn-primary btn-lg">Send</button>
                         </form>
@@ -96,15 +96,15 @@
                     </div>
 
                     <div class="col-md-4">
-                        <h4>Contact Us on Social Media</h4>
+                        <h4>Contact Me on Social Media</h4>
                         <p>
-                            <a href="https://web.facebook.com/Globalforexcollege-270195821522002" class="social-round-icon white-round-icon fa-icon" title="">
+                            <a href="" class="social-round-icon white-round-icon fa-icon" title="">
                             <i class="fa fa-facebook" aria-hidden="true"></i>
                           </a>
-                          <a href="https://twitter.com/theFXcollege" class="social-round-icon white-round-icon fa-icon" title="">
+                          <a href="" class="social-round-icon white-round-icon fa-icon" title="">
                             <i class="fa fa-twitter" aria-hidden="true"></i>
                           </a>
-                          <a href="https://www.linkedin.com/in/global-forex-a876b2221/" class="social-round-icon white-round-icon fa-icon" title="">
+                          <a href=" class="social-round-icon white-round-icon fa-icon" title="">
                             <i class="fa fa-linkedin" aria-hidden="true"></i>
                           </a>
                         </p>
@@ -153,6 +153,24 @@
 
 
 
-<script type="text/javascript" src="./main.41beeca9.js"></script></body>
+<script type="text/javascript" src="./main.41beeca9.js"></script>
+
+<script>
+    let submit = document.getElementById("submit")
+    let name = document.getElementById("name")
+    let email = document.getElementById("email")
+    let text = document.getElementById("text")
+    let subject = document.getElementById("subject")
+
+    submit.addEventListener("click", (name,email,text,subject)=>{
+      if(email&&name&&text&&suject==""){
+        alert("Your email has been successfully submitted")
+      }else{
+        alert("Please fill out Correct details on the form before submitting!")
+      }
+    })
+  </script>
+
+</body>
 
 </html>
