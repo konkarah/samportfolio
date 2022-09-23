@@ -49,4 +49,6 @@ app.get('/signin', (req, res)=> {
     res.sendFile(path.join(__dirname, './signin.html'));
 })
 
-app.listen(3015)
+app.listen(process.env.PORT || 3015, () => {
+    console.log('Server is running on port 3000...');
+});
