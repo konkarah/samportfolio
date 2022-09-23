@@ -1,0 +1,103 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background: url('../img/pic1.jpg');
+            background-size: cover;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    
+        .wrap {
+            max-width: 350px;
+            border-radius: 20px;
+            margin: auto;
+            background: rgba(0,0,0,0.8);
+            box-sizing: border-box;
+            padding: 40px;
+            color: #ffffff;
+            margin-top: 100px;
+        }
+        .wrap p{
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+        }
+    
+        h2 {
+        text-align: center; 
+        }
+    
+        input[type=password], [type=email], [type=text] {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 12px 5px;
+            background: rgba(0, 0, 0, 0.10);
+            border: none;
+            outline: none;
+            border-bottom: 1px dotted #fff;
+            border-radius: 5px;
+            color: rgb(160, 142, 142);
+            margin: 5px;
+            font-weight: bold;
+        }
+    
+    
+        input[type=submit] {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 10px 0;
+            margin-top: 30px;
+            outline: none;
+            border: none;
+            background: #60adde;
+            opacity: 0.7;
+            border-radius: 20px;
+            font-size: 20px;
+            color: #ffffff;
+    
+        }
+    
+        input[type= submit]:hover {
+            background: #003366;
+            opacity: 0.7;
+        }
+        </style>
+</head>
+<body>
+    <div class="wrap">
+        <h2>Sign Up Here</h2>
+        <% if (typeof err !== 'undefined' && err.length > 0) { %>
+            <div class="alert-danger"><%= err %></div>
+          <% } %>
+        <form method="post" action="http://localhost:3015/final/signup">
+            <input type="text" placeholder="name" name="name" required value="<%= typeof tname !='undefined' ? name: ''  %>"> 
+            <input type="email" placeholder="email" name="email" required value="<%= typeof email !='undefined' ? email: ''  %>">
+            <input type="password" placeholder="password" name="password" required>
+            <input type="submit" value="Submit">
+        </form>
+        
+        <form action="http://localhost:3015/final/signin">
+            <p>Already registered?</p>
+            <input type="submit" value="Signin">
+        </form>
+    </div>
+
+    <!--<script>
+        var form = document.forms.form;
+        form.onsubmit = function(e) {
+            e.preventDefault();
+            var email = form.email.value;
+            var password = form.password.value;
+            var confirmpass = form.confirmpass.value;
+            if (password != confirmpass) {
+                alert("password doesn't match");
+            } else {
+                form.submit();
+            }
+        }
+    </script>-->
+</body>
+</html>
