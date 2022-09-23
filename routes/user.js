@@ -32,6 +32,7 @@ router.use(session({
     secret: process.env.Token_secret,
     resave: false,
     saveUninitialized: false
+    //store: new MemoryStore({checkPeriod: 86400000})
 }));
 
 router.use(express.json())
