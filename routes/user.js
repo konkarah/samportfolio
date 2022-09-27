@@ -118,6 +118,9 @@ router.get('/index',checkauthenticated, (req,res)=> {
         link: "https://samkenyafx.com/"+req.user.userid
     })
 })
+router.get('/trial', (req, res)=> {
+    res.send("hello")
+})
 
 
 function checkauthenticated(req, res, next){
