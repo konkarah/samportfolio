@@ -1,6 +1,6 @@
-if(process.env.NODE_ENV !== 'production'){
+/*if(process.env.NODE_ENV !== 'production'){
     require('dotenv').config();
-}
+}*/
 
 const express = require('express')
 const app = express()
@@ -27,7 +27,9 @@ app.use(bodyParser.json())
 /*app.use(expressLayouts)
 app.set('view engine', 'ejs')*/
 
+app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
+app.use(express.urlencoded( { extended : true}));
 
 //session variable
 app.use(session({
