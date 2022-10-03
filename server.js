@@ -29,7 +29,15 @@ app.set('view engine', 'ejs')*/
 
 app.set('view engine', 'ejs');
 
-
+//session variable
+app.use(session({
+    secret:'youtube_video',
+    resave: false,
+    saveUninitialized: false,
+    cookie: {
+        maxAge: 60 * 1000 * 30
+    }
+}));
 
 //middleware
 app.use(express.json())
