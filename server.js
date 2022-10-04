@@ -11,6 +11,7 @@ const bodyParser = require('body-parser')
 const expressLayouts = require('express-ejs-layouts')
 const users = require('./routes/users')
 const final = require('./routes/user')
+const session = require('express-session');
 
 //import routes
 const authRoute = require('./routes/auth')
