@@ -12,6 +12,8 @@ const expressLayouts = require('express-ejs-layouts')
 const users = require('./routes/users')
 const final = require('./routes/user')
 const session = require('express-session');
+const signalschema = require('./model/signal')
+const statususer = require('./model/User')
 
 //import routes
 const authRoute = require('./routes/auth')
@@ -61,6 +63,50 @@ app.get('/signin', (req, res)=> {
     res.sendFile(path.join(__dirname, './signin.html'));
 })
 
+/*app.get('/admin', (req,res)=> {
+    res.render('admin')
+})*/
+
+app.post('/admin', async(req,res)=> {
+    const signal = req.body.signals
+
+    const savedsigal = new signalschema({
+        signal: signal
+    })
+
+    try{
+        await savedsigal.save()
+        res.send("Signal posted successfully")
+    }catch(err){
+        res.send(err)
+    }
+})
+
+app.post('/changestatus', async(req,res)=>{
+    const email = {email:req.body.email}
+    const status = {status:req.body.status}
+
+    await statususer.findOneAndUpdate(email, status, {
+        new: true,
+        upsert: true 
+    })
+    res.render('adminres', {
+        status: "status changed"
+    })
+
+    /*statususer.findOne({
+        email: email
+      }).then(
+        user => {
+            if(!user){
+                console.log("user not found")
+            }else{
+                statususer.
+            }
+        }
+      )*/
+})
+
 app.listen(process.env.PORT || 3015, () => {
-    console.log('Server is running on port 3000...');
+    console.log('Server is running on port 3015...');
 });

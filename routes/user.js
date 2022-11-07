@@ -15,6 +15,8 @@ const session = require('express-session');
 const methodoverride = require('method-override');
 const users = require('../model/User')
 const {registerValidation, loginValidation} = require('../validation')
+const dotenv = require('dotenv').config()
+const savedsigals = require('../model/signal')
 
 
 const initialisepassport = require('../passport-config');
@@ -52,10 +54,21 @@ router.get('/signin', checknotauthenticated,(req, res) => {
 });
 
 router.post('/signin',checknotauthenticated, passport.authenticate('local', {
-    successRedirect: 'index',
+    //successRedirect: 'index',
     failureRedirect: 'signin',
     failureFlash: true
-}));
+}),(req,res)=>{
+    if(req.user.status === 1) {
+        res.redirect('index');
+      }
+      if (req.user.status === 0) {
+        res.send("Please pay to login")
+      }
+      if(req.user.status === 2){
+          res.render('admin')
+      }
+}
+);
 
 router.get('/signup', (req, res) => {
     res.render('register')
@@ -113,9 +126,27 @@ router.delete('/logout', (req, res) => {
 });
 
 
-router.get('/index',checkauthenticated, (req,res)=> {
+router.get('/savedsignals',async(req, res)=> {
+    try {
+        const results = await savedsigals.find({}).limit(2);
+        console.log(results);
+      } catch (err) {
+        throw err;
+      }
+})
+
+router.get('/index',checkauthenticated, async(req,res)=> {
+    var signalresults
+    try {
+        signalresults = await savedsigals.find({}).limit(2);
+        //console.log(results);
+      } catch (err) {
+        throw err;
+      }
+
     res.render('index', {
-        link: "https://samkenyafx.com/"+req.user.userid
+        link: "https://samkenyafx.com/"+req.user.userid,
+        signals: signalresults
     })
 })
 router.get('/trial', (req, res)=> {

@@ -28,6 +28,10 @@ const userSchema = new mongoose.Schema({
     date: {
         type: Date,
         default: Date.now
+    },
+    status: {
+        type: Number,
+        default: 0
     }
 })
 

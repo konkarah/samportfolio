@@ -1,0 +1,12 @@
+user => {
+        if (!user) {
+            console.log("email not registered")
+          //return (null, false, { message: 'That email is not registered' });
+        }else{
+            if(status==='paid'){
+                res.send("paid")
+            }else{
+                res.send("unpaid")
+            }
+        }
+    }

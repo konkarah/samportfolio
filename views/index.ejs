@@ -265,6 +265,13 @@
       <p id="afflink"><%= link %></p>
   </div>
   </section>
+
+  <section class="signal">
+    <%for(signal of signals) {%>
+      <p><%=signal.signal%>&ensp;</p>
+      <p><%=signal.signaldate%>&ensp;</p>
+    <%}%>  
+  </section>
   
   
 
