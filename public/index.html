@@ -58,6 +58,9 @@
           <li class="nav-item">
             <a class="nav-link js-scroll" href="#affiliate">Affiliates</a>
           </li>
+          <!--<li class="nav-item">
+            <a class="nav-link js-scroll" href="#blog">Blog</a>
+          </li>-->
           <li class="nav-item">
             <a class="nav-link js-scroll" href="#contact">Contact</a>
           </li>
@@ -65,8 +68,8 @@
             <a class="nav-link js-scroll" href="#recommendedbroker">Recommended Brokers</a>
           </li>
           <li class="nav-item" >
-            <form action="/logout?_method=DELETE" method="POST">
-              <button type="submit">Logout</button>
+            <form action="/final/signin" method="GET">
+              <button type="submit">Sign in</button>
             </form>
           </li>
         </ul>
@@ -183,7 +186,7 @@
       </div>
       <div class="row">
         <div class="col-md-4">
-          <a href="../signals.html"><div class="service-box">
+          <a href="./signals.html"><div class="service-box">
             <div class="service-ico">
               <span class="ico-circle"><i class="ion-monitor"></i></span>
             </div>
@@ -197,7 +200,7 @@
         </div>
         
         <div class="col-md-4">
-          <a href="../training.html"><div class="service-box">
+          <a href="./training.html"><div class="service-box">
             <div class="service-ico">
               <span class="ico-circle"><i class="ion-camera"></i></span>
             </div>
@@ -247,7 +250,7 @@
             <div class="input-group news-input">
                 <!--<button class="btn btn-dark btn-lg" type="button"><a href="https://portal.fxpesa.com/live-account/?clickid=8749&affid=C01032200" class="btn rb">FX PESA</a></button>
                 <button class="btn btn-dark btn-lg" type="button"><a href="https://portal1.scopemarkets.co.ke/en/auth/register?linkId=5QRXXkdcRk" class="btn rb">SCOPE MARKETS</a></button>-->
-                <!--<a href="https://clicks.pipaffiliates.com/c?c=644724&l=en&p=1"><img src="./img/XM-logo.jpeg" alt="XM TRADERS" class="xm"></a>-->
+                <a href="https://clicks.pipaffiliates.com/c?c=644724&l=en&p=1"><img src="./img/XM-logo.jpeg" alt="XM TRADERS" class="xm"></a>
                 <!--<button class="btn btn-dark btn-lg" type="button"><a href="https://r.shortlify.com/?prefid=1001973&p=web" class="btn rb">EXPERT OPTION</a></button>-->
               </div>
         </div>
@@ -259,18 +262,13 @@
       <div class="d-md-flex justify-content-between align-items-center">
           <div class="input-group news-input">
               <p>Please log in to join our Affiliate Program <br>
-              By joining this programme, you can make money through reffering people to join this platform <br></p>
+              By joining this programme, you can make money through reffering people to join this platform</p>
+            </div>
+            <div class="affbtn">
+              <a href="https://samkenuyafx.com/final/signin"><input type="submit" value="Join Programme"></a>
             </div>
       </div>
-      <p id="afflink"><%= link %></p>
   </div>
-  </section>
-
-  <section class="signal">
-    <%for(signal of signals) {%>
-      <p><%=signal.signal%>&ensp;</p>
-      <p><%=signal.signaldate%>&ensp;</p>
-    <%}%>  
   </section>
   
   
@@ -381,7 +379,6 @@
     </footer>
   </section>
   <!--/ Section Contact-footer End /-->
-  
 
   <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
   <div id="preloader"></div>
