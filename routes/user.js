@@ -149,7 +149,7 @@ if(req.user.status==1){
         link: "https://samkenyafx.com/"+req.user.userid,
         signals: signalresults
     })
-}else if(req.user.status==0){
+}if(req.user.status==0 || req.user == null || req.user == undefined || req.user == ""){
     res.render('home')
 }
 })
