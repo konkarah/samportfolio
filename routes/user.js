@@ -136,6 +136,7 @@ router.get('/savedsignals',async(req, res)=> {
 })
 
 router.get('/index',checkauthenticated, async(req,res)=> {
+if(req.user.status==1){
     var signalresults
     try {
         signalresults = await savedsigals.find({}).limit(2);
@@ -148,6 +149,9 @@ router.get('/index',checkauthenticated, async(req,res)=> {
         link: "https://samkenyafx.com/"+req.user.userid,
         signals: signalresults
     })
+}else if(req.user.status==0){
+    res.render('home')
+}
 })
 router.get('/trial', (req, res)=> {
     res.send("hello")
