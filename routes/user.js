@@ -118,7 +118,7 @@ router.post('/signup',checknotauthenticated, async (req, res) => {
 })
 
 
-router.delete('/logout', (req, res) => {
+router.post('/logout', (req, res) => {
     req.logout(function(err) {
         if (err) { return next(err); }
         res.redirect('/');
