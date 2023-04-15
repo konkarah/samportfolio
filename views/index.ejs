@@ -23,6 +23,15 @@
 
   <!-- Main Stylesheet File -->
   <link href="css/style.css" rel="stylesheet">
+  <style>
+    @font-face {
+    font-family: "custfont";
+    src: url("./ananda-black-font/AnandaBlackPersonalUseRegular-rg9Rx.ttf");
+}
+    #logo{
+      font-family: custfont;
+    }
+  </style>
 
   <!-- =======================================================
     Theme Name: DevFolio
@@ -37,7 +46,7 @@
   <!--/ Nav Star /-->
   <nav class="navbar navbar-b navbar-trans navbar-expand-md fixed-top" id="mainNav">
     <div class="container">
-      <a class="navbar-brand js-scroll" href="#page-top">Sam Kenya FX</a>
+      <a class="navbar-brand js-scroll" href="#page-top" id="logo">Sam Kenya FX</a>
       <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarDefault"
         aria-controls="navbarDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span></span>
@@ -56,8 +65,11 @@
             <a class="nav-link js-scroll" href="#service">Services</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll" href="#affiliate">Affiliates</a>
+            <a class="nav-link js-scroll" href="#affiliate">Copy Trading</a>
           </li>
+          <!--<li class="nav-item">
+            <a class="nav-link js-scroll" href="#blog">Blog</a>
+          </li>-->
           <li class="nav-item">
             <a class="nav-link js-scroll" href="#contact">Contact</a>
           </li>
@@ -65,8 +77,8 @@
             <a class="nav-link js-scroll" href="#recommendedbroker">Recommended Brokers</a>
           </li>-->
           <li class="nav-item" >
-            <form action="/final/logout?_method=DELETE" method="POST">
-              <button type="submit">Logout</button>
+            <form action="/final/signin" method="GET">
+              <button type="submit">Sign in</button>
             </form>
           </li>
         </ul>
@@ -76,14 +88,14 @@
   <!--/ Nav End /-->
 
   <!--/ Intro Skew Star /-->
-  <div id="home" class="intro route bg-image" style="background-image: url(img/pic1.jpg)">
+  <div id="home" class="intro route bg-image" style="background-image: url(./public/back.jpeg)">
     <div class="overlay-itro"></div>
     <div class="intro-content display-table">
       <div class="table-cell">
         <div class="container">
           <!--<p class="display-6 color-d">Hello, world!</p>-->
-          <h1 class="intro-title mb-4">I am Sam Kenya FX</h1>
-          <p class="intro-subtitle"><span class="text-slider-items">Experienced Financial Markets Trader & Copy Trading Expert</span><strong class="text-slider"></strong></p>
+          <h1 class="intro-title mb-4">Best Copy Traders</h1>
+          <p class="intro-subtitle"><span class="text-slider-items">We offer the best COPY TRADING services in the current Financial market</span><strong class="text-slider"></strong></p>
           <!-- <p class="pt-3"><a class="btn btn-primary btn js-scroll px-4" href="#about" role="button">Learn More</a></p> -->
         </div>
       </div>
@@ -99,18 +111,19 @@
             <div class="row">
               <div class="col-md-6">
                 <div class="row">
-                  <div class="col-sm-6 col-md-5">
+                  <!--<div class="col-sm-6 col-md-5">
                     <div class="about-img">
                       <img src="img/pic3.jpeg" class="img-fluid rounded b-shadow-a" alt="">
                     </div>
-                  </div>
+                  </div>-->
                   <div class="col-sm-6 col-md-7">
                     <div class="about-info">
-                      <p><span class="title-s">Name: </span> <span>Sam Ngunjiri</span></p>
-                      <p><span class="title-s">Profile: </span> <span>Experienced Forex Trader</span></p>
-                      <p><span class="title-s">Email: </span> <span>samngunjiri2050@gmail.com</span></p>
+                      <p><span class="title-s">Name: </span> <span>Sam KenyaFX</span></p>
+                      <p><span class="title-s">Profile: </span> <span>Accredited Copy Traders</span></p>
+                      <p><span class="title-s">Email: </span> <span>samkenyafx@gmail.com</span></p>
                       <p><span class="title-s">Phone: </span> <span>+254 759 663 815 OR +254710211319</span></p>
                     </div>
+                      <a href="/tcs"><input type="submit" value="T&C's"></a>
                   </div>
                 </div>
                 <!--<div class="skill-mf">
@@ -141,19 +154,17 @@
                 <div class="about-me pt-4 pt-md-0">
                   <div class="title-box-2">
                     <h5 class="title-left">
-                      About me
+                      About Us
                     </h5>
                   </div>
                   <p class="lead">
-                    I am an experienced trader after years of training through active trading. Over the years I have acquired 
-                    enough experience to help guide others (beginners and intermediary level traders ) and cushion them from losses guaranteed for every new trader.
+                    At Sam KenyaFx, we offer a cutting-edge platform that allows traders to copy the trades of experienced professionals in real-time. Our platform connects traders with top-performing signal providers from around the world, giving them access to strategies and insights that have been proven to generate consistent profits.
                   </p>
                   <p class="lead">
-                    The cut-throat industry takes no victims, and as such, you should make it your personal initiative to ensure you 
-                    are well versed before making any investments.
+                    With our easy-to-use platform, traders can browse through the profiles of our signal providers, view their performance statistics and track records, and select the ones they want to copy. Once a trader has chosen a signal provider, our platform automatically executes their trades in the trader's account, so they don't have to do anything manually.
                   </p>
                   <p class="lead">
-                    Samkenya fx's offer of compensating 50% of the money invested in copy trading is an attractive opportunity for investors seeking to minimize their risks while maximizing their returns. This offer provides a significant advantage for investors, as it ensures that they can trust Samkenya fx's trading strategy, knowing that they are protected against potential losses. With this offer, investors can benefit from Samkenya fx's trading expertise, regardless of their level of experience, and potentially earn passive income through their investments. 
+                    Our copy trading platform is designed to be user-friendly, secure, and transparent. We provide detailed information about each signal provider, including their trading history, risk management strategy, and performance metrics, so traders can make informed decisions about who to copy.
                   </p>
                 </div>
               </div>
@@ -174,15 +185,15 @@
               Services
             </h3>
             <p class="subtitle-a">
-              I offer the following services
+              I offer the following service
             </p>
             <div class="line-mf"></div>
           </div>
         </div>
       </div>
       <div class="row">
-        <div class="col-md-4">
-          <a href="../signals.html"><div class="service-box">
+        <div class="col-md-12">
+          <a href="./signals.html"><div class="service-box">
             <div class="service-ico">
               <span class="ico-circle"><i class="ion-monitor"></i></span>
             </div>
@@ -194,9 +205,9 @@
             </div></a>
           </div>
         </div>
-        
+        <!--
         <div class="col-md-4">
-          <a href="../training.html"><div class="service-box">
+          <a href="./training.html"><div class="service-box">
             <div class="service-ico">
               <span class="ico-circle"><i class="ion-camera"></i></span>
             </div>
@@ -234,42 +245,24 @@
               </p>
             </div>
           </div>
+        -->
         </div>
 
   </section>
   <!--/ Section Services End /-->
 
-  <!--<section class="bg-primary text-light p-5" id="recommendedbroker">
-    <div class="container">
-        <div class="d-md-flex justify-content-between align-items-center">
-            <h3 class="mb-3 mb-md-0">Here are our Recommended Brokers</h3>
-            <div class="input-group news-input">
-                <button class="btn btn-dark btn-lg" type="button"><a href="https://portal.fxpesa.com/live-account/?clickid=8749&affid=C01032200" class="btn rb">FX PESA</a></button>
-                <button class="btn btn-dark btn-lg" type="button"><a href="https://portal1.scopemarkets.co.ke/en/auth/register?linkId=5QRXXkdcRk" class="btn rb">SCOPE MARKETS</a></button>
-                <a href="https://clicks.pipaffiliates.com/c?c=644724&l=en&p=1"><img src="./img/XM-logo.jpeg" alt="XM TRADERS" class="xm"></a>
-                <button class="btn btn-dark btn-lg" type="button"><a href="https://r.shortlify.com/?prefid=1001973&p=web" class="btn rb">EXPERT OPTION</a></button>
-              </div>
-        </div>
-    </div>
-  </section>-->
-
   <section class="bg-primary text-light p-5" id="affiliate">
     <div class="container">
       <div class="d-md-flex justify-content-between align-items-center">
           <div class="input-group news-input">
-              <p>Please log in to join our Affiliate Program <br>
-              By joining this programme, you can make money through reffering people to join this platform <br></p>
+              <p>Read T&C's <br>
+              Kindly Read and Understand our conditions to enjoy maximum profitability</p>
+            </div>
+            <div class="affbtn">
+              <a href="/tcs"><input type="submit" value="T&C's"></a>
             </div>
       </div>
-      <p id="afflink"><%= link %></p>
   </div>
-  </section>
-
-  <section class="signal">
-    <%for(signal of signals) {%>
-      <p><%=signal.signal%>&ensp;</p>
-      <p><%=signal.signaldate%>&ensp;</p>
-    <%}%>  
   </section>
   
   
@@ -380,7 +373,6 @@
     </footer>
   </section>
   <!--/ Section Contact-footer End /-->
-  
 
   <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
   <div id="preloader"></div>

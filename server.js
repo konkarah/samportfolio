@@ -107,6 +107,11 @@ app.post('/changestatus', async(req,res)=>{
       )*/
 })
 
+app.get('/tcs', (req,res)=> {
+    const file = `./public/COPY TRADING TERMS AND CONDITIONS.pdf`;
+    res.download(file); // Set disposition and send it.
+})
+
 app.listen(process.env.PORT || 3015, () => {
     console.log('Server is running on port 3015...');
 });
